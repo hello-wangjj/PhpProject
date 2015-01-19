@@ -1,0 +1,24 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 2015-1-19, 22:17:06
+    Author     : Administrator
+*/
+body{ font-size:12px; background-color:#c6c68c; padding:0px;
+font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;}/*定义body样式*/
+#container {clear:both;overflow:auto;   margin:2px auto 0px; padding:0px; width:948px; border:1px solid #000; background-color:#f6f6f6;}/*定义container样式*/
+#header { margin:0 auto; padding:8px; height:80px; background-color:#e8f3fd; border-bottom:1px solid #000; font:16px bold;}/*定义header*/
+#title { margin:0 auto; padding:8px; height:10px; background-color:#e8f3fd; border-bottom:1px solid #000; font-style:italic;}/*定义title样式*/
+#left { float:left; margin:6px 0 4px 2px; padding:5px; width:700px;}/*定义left样式*/
+#right {float:right; margin:6px 0 4px 2px; padding:5px; width:220px;}/*定义right样式*/
+#blog_entry { margin:4px auto 10px; border:1px solid #000; background-color:#fff;}/*定义blog_entry样式*/
+#blog_title { border-bottom:1px solid #000; background-color:#e8ecdb; margin:0px; padding:4px; font:13px bold;}
+#blog_body { margin:4px auto 0; padding:6px;}
+#blog_date { margin:0 auto; padding:0 0 8px 0; font-size:10px;}
+#side_bar { margin:4px auto; border:1px solid #000; width:180px; background-color:#fff;}
+#menu_title { border-bottom:1px solid #000; background-color:#e8ecdb; margin:0; padding:4px; /*height:10px;*/ font:13px bold;}
+#menu_body { margin:4 auto 0; padding:6px;}
+#footer { width:932px;clear:both; text-align:center; margin:0 auto; padding:8px; height:10px; background-color:#e8f3fd; border:1px solid #000;}

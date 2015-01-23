@@ -77,11 +77,11 @@ $temp_data['FILENAME'] = $path.'-'.$entry;
                 <div id="side_bar">
                     <div id="menu_title">关于我</div>
                     <div id="menu_body">我是个PHP爱好者</div>
-                    <br/><br/>
+                    <br/>
                         <?php  
                         if($login)
                         {
-                            echo '<a href="logout.php">退出</a>';
+                            echo '<a href="logout.php">退出</a>'.'&nbsp;&nbsp;&nbsp'.'<a href="index.php">返回首页</a>';
                         }
                         else
                         {

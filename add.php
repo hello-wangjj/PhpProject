@@ -1,8 +1,14 @@
 <?php
-$ok=true;
+$login=FALSE;
+session_start();
+
+if(!empty($_SESSION['user']) && $_SESSION['user']=='admin')
+    $login=TRUE;
+
+
 if(isset($_POST['title'])&&isset($_POST['content']))  //判断变量
 {
-    $ok=true;
+    $login=true;
     $title=trim($_POST['title']);
     $content=  trim($_POST['content']);
     $date=  time();
@@ -21,8 +27,8 @@ if(isset($_POST['title'])&&isset($_POST['content']))  //判断变量
     {
         if(!mkdir($folder))
         {
-            $ok=false;
-            $msg='<font color=red>创建目录失败</font>';
+            //$login=false;
+            //$msg='<font color=red>创建目录失败</font>';
         }
     }
     
@@ -36,7 +42,7 @@ if(isset($_POST['title'])&&isset($_POST['content']))  //判断变量
     }
     if(strlen($result))
     {
-        //ok=true;
+        //$login=true;
         $msg='日志添加成功，<a href="post.php?entry='.$entry.'">查看该日志文章</a>';
         echo $msg;
     }
@@ -51,13 +57,13 @@ and open the template in the editor.
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>基于文本的简易Blog</title>
+        <title>我的BLOG</title>
         <link rel="stylesheet" type="text/css" href="style.css"/>
     </head>
     <body>
         <div id="container">
             <div id="header">
-                Blog名称
+                <h1>我的BLOG</h1>
             </div>
             <div id="title">
                 ----I have a dream....
@@ -73,7 +79,15 @@ and open the template in the editor.
                             <tr><td><input type="text" name="title" size="50"/></td></tr>
                             <tr><td>日志内容：</td></tr>
                             <tr><td><textarea name="content" cols="49" rows="10"></textarea></td></tr>
-                            <tr><td><input type="submit" value="提交"/></td></tr>
+                            <?php
+                            if($login)
+                            {
+                            echo '<tr><td><input type="submit" value="提交"/></td></tr>';
+                            }
+                            else {
+                                echo '<tr><td><a href="login.php">请先登录</a></td></tr>';
+                            }
+                            ?>
                         </form>
                     </table>
                     </div>
@@ -83,6 +97,17 @@ and open the template in the editor.
                 <div id="side_bar">
                     <div id="menu_title">关于我</div>
                     <div id="menu_body">我是个PHP爱好者</div>
+                    <br/>
+                        <?php  
+                        if($login)
+                        {
+                            echo '<a href="logout.php">退出</a>'.'&nbsp;&nbsp;&nbsp'.'<a href="index.php">返回首页</a>';
+                        }
+                        else
+                        {
+                            echo '<a href="login.php">登录</a>';
+                        }
+                        ?>
                 </div>
             </div>
         </div>
